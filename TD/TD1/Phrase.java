@@ -1,29 +1,37 @@
 package TD.TD1;
 
-import java.util.Arrays;
-
 public class Phrase {
     
     public static void main(String[] args) {
 		
-		String phrase = args[0];
-		String[] copy;
-		int countW = 0;
-		int start = 0;
-		int end = 0;
+		String copy = "Bonjour tout le monde inhere!";
+		String[] subArray;
 		
-		System.out.println("Length of phrase is: "+ phrase.length());
+		System.out.println("Length of phrase is: "+ copy.length());
 		System.out.println("Phrase composed of words:");
 		
-		for ( int i = 0; i < phrase.length(); i ++) {
-		    
-		    if ( phrase[i] == (" ")){
-		        copy = Arrays.copyofRange(phrase,start,end);
-		        System.out.println(copy);
-		        start = i;
-		        end = i;
-		    }
-		    end++;
+		subArray = copy.split(" ");
+		for ( int i = 0; i < subArray.length; i ++) {
+		
+			System.out.println(subArray[i]);
 		}
+
+		System.out.println("All words lowercase:");
+		for ( int i = 0; i < subArray.length; i ++) {
+		
+			System.out.println(subArray[i].toLowerCase());
+		}
+
+		System.out.println("All words uppercase:");
+		for ( int i = 0; i < subArray.length; i ++) {
+		
+			System.out.println(subArray[i].toUpperCase());
+		}
+
+		System.out.println("The phrase contains word \"in\":" + copy.contains("in"));
+		System.out.println("The phrase ends with \".\":" + copy.endsWith("."));
+		System.out.println("The phrase ends with \"!\":" + copy.endsWith("!"));
+		System.out.println("The phrase ends with \"?\":" + copy.endsWith("?"));
+		System.out.println(copy.replace("in", "out of"));
     }
 }
