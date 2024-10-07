@@ -2,7 +2,6 @@ package TD.TD1;
 
 import java.util.Scanner;
 
-
 public class GetBinaryValue {
     public static void main(String[] args) {
         
@@ -40,7 +39,7 @@ public class GetBinaryValue {
         }
         scanner.close();
 
-        if ( count != 0 ) {
+        if ( countA != 0 || count != 0) {
             System.out.println("Received "+ countA + " arguments.");
             System.out.println("The arguments are:");
 
@@ -52,8 +51,6 @@ public class GetBinaryValue {
             binary = Integer.toBinaryString(first[0]);
             System.out.println("The binary representation of "+ first[0] + " is " + binary);
         }
-        
-        
     }
 }
 
