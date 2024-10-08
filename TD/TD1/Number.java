@@ -12,13 +12,15 @@ public class Number{
 		double doubleVal = sc.nextDouble();
 
         NumberFormat format = NumberFormat.getInstance(java.util.Locale.FRENCH); // formatage français
+        NumberFormat currency = NumberFormat.getCurrencyInstance(Locale.FRENCH);
+        currency.setCurrency(Currency.getInstance(Locale.FRANCE));
 		
         long french = Math.round(doubleVal); // arrondir
 
         Currency cur1 = Currency.getInstance("EUR");
 
 		System.out.println("Number: " +format.format(doubleVal));
-        System.out.println("Currency: " +format.format(doubleVal) + " " + cur1.getSymbol());
+        System.out.println("Currency: " +currency.format(doubleVal)) ;//+ " " //+ cur1.getSymbol());
 		System.out.println("Integer: " +format.format(french));
 	}
 }
