@@ -9,13 +9,13 @@ public class Physicist {
     public Physicist ( String name, LocalDate date, String location) {
         this.name = name;
         this.location = location;
-        birth_date = date;
+        setBirthDate(date);
     }
     
     public Physicist ( String name, LocalDate date) {
         this.name = name;
         this.location = null;
-        birth_date = date;
+        setBirthDate(date);
     }
     
     public Physicist ( String name) {
@@ -32,7 +32,8 @@ public class Physicist {
     }
     
     public void setBirthDate(LocalDate newDate) {
-        if (newDate.isAfter(LocalDate.parse("2024-01-01")) || newDate.isBefore(LocalDate.parse("1740-01-01"))) birth_date = null;
+        if (newDate.isAfter(LocalDate.parse("2024-01-01"))) birth_date = null;
+        else if (newDate.isBefore(LocalDate.parse("1740-01-01"))) birth_date = null;
         else birth_date = newDate;
     }
     
