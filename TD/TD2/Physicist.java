@@ -27,12 +27,13 @@ public class Physicist {
     public String toString() {
         if ( name!= null && birth_date != null && location!= null) return name +"," + birth_date + "," + location;
         else if (name != null && birth_date != null && location == null) return name + "," + birth_date;
+        else if (name != null && birth_date == null && location != null) return name + "," + location;
         else return name;
     }
     
     public void setBirthDate(LocalDate newDate) {
-        if (newDate.isAfter(LocalDate.now()) || newDate.isBefore(LocalDate.parse("2000-01-01"))) newDate = null;
-        birth_date = newDate;
+        if (newDate.isAfter(LocalDate.parse("2024-01-01")) || newDate.isBefore(LocalDate.parse("1740-01-01"))) birth_date = null;
+        else birth_date = newDate;
     }
     
     public static void main(String[] args) {
@@ -45,5 +46,8 @@ public class Physicist {
         System.out.println(phy4);
         phy4.setBirthDate(LocalDate.of(1847, 2, 11));
         System.out.println(phy4);
+
+        Physicist phy5 = new Physicist("Future Genius", LocalDate.of(2050, 4, 19), "Pacific Ocean");
+        System.out.println(phy5);
     }
 }
