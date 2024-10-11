@@ -14,7 +14,7 @@ public class FileReaderUtility {
 
         while( scan.hasNextLine()) {
 
-            content.append(scan.nextLine());
+            content.append(scan.next()).append("\n");
         }
         scan.close();
 
@@ -23,13 +23,15 @@ public class FileReaderUtility {
 
     public static void main(String[] args) {
         
-        try{
-            System.out.println(FileReaderUtility.readFile("sample.txt"));
+        	
+    try{
+         System.out.println(FileReaderUtility.readFile("sample.txt"));
         }
         catch (Throwable t)
         {
-            System.out.println(t.getClass().getName() + ": " + t.getMessage());
+         System.out.println(t.getClass().getName() + ": " + t.getMessage());
         }
-    }
+
+        }
     
 }
